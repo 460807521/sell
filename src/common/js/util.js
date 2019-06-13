@@ -1,0 +1,3 @@
+exports.urlParse = function () {
+  return '';
+};
