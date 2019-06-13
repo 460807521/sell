@@ -82,7 +82,7 @@ export default {
         bg-image('star36_half')
       &.off
         bg-image('star36_off')
-  &.star-36
+  &.star-24
     .star-item
       width 10px
       height 10px
