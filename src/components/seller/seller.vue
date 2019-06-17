@@ -85,6 +85,7 @@
 </template>
 <script type="text/ecmascript-6">
 import star from 'components/star/star';
+import { saveToLocal, loadFromLocal } from 'common/js/store';
 import split from 'components/split/split';
 import BScroll from 'better-scroll';
 
@@ -96,7 +97,9 @@ export default {
   },
   data () {
     return {
-      favorite: false
+      favorite: (() => {
+        return loadFromLocal(this.seller.id, 'favorite', false);
+      })()
     };
   },
   computed: {
@@ -150,6 +153,7 @@ export default {
         return;
       }
       this.favorite = !this.favorite;
+      saveToLocal(this.seller.id, 'favorite', this.favorite);
     }
   },
   components: {
